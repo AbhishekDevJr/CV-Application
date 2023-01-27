@@ -1,5 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
+import ExperienceComp from './ExperienceComp';
 
 class PersonalInfo extends Component{
     constructor(props){
@@ -59,7 +60,7 @@ class PersonalInfo extends Component{
 
     handleEmail = (e) => {
         this.setState({
-            email : e.target.valule
+            email : e.target.value
         });
     }
 
@@ -80,7 +81,7 @@ class PersonalInfo extends Component{
                     <form action = "" method = "">
                         <div className = "row">
                         <label htmlFor = "name">First Name</label>
-                        <input type = "text" id = "name" name = "name" value={this.state.fname} placeholder = "First Name" onChange={this.handleFirstName}/>
+                        <input type = "text" id = "name" name = "name" value={this.state.fname} onChange={this.handleFirstName}/>
                         </div>
 
                         <div className = "row">
@@ -115,11 +116,14 @@ class PersonalInfo extends Component{
 
                         <div className = "row">
                         <label htmlFor = "description">Description</label>
-                        <textarea id = "description" name = "Description" onChange = {this.handleDescription} ></textarea>
+                        <textarea id = "description" name = "Description" rows = "5" onChange = {this.handleDescription} ></textarea>
                         </div>
 
                     </form>
+
                 </div>
+
+                <ExperienceComp />
             </div>
         )
     }
