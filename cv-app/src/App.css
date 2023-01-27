@@ -1,6 +1,24 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
+.personalInfo {
+  font-family : 'Nunito', sans-serif;
+}
+
 header {
 text-align : center;
+}
+
+header h1 {
+  font-family : 'Zen Tokyo Zoo', cursive;
+  font-size : 48px;
+}
+
+header p {
+  font-family : 'Nunito', sans-serif;
+  font-size : 24px;
+  font-weight : 600;
 }
 .section-personalInfo {
   display : flex;
@@ -15,6 +33,7 @@ textarea {
 
 form { 
   width : 30%;
+  font-size : 20px;
 }
 
 form input, textarea {
