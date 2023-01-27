@@ -1,4 +1,30 @@
-.section-personalInfo input {
+
+header {
+text-align : center;
+}
+.section-personalInfo {
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
+  align-items : center; 
+}
+
+textarea {
   display : block;
-  border : 1px solid blue; 
+}
+
+form { 
+  width : 30%;
+}
+
+form input, textarea {
+  width : 50%;
+}
+
+.row {
+  display : flex;
+  flex-direction : row;
+  justify-content : space-between;
+  align-items : center;
+  padding : 2.5% 0 2.5% 0;
 }
