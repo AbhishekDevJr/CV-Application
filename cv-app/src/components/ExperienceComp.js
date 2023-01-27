@@ -1,5 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
+import EducationComp from './EducationComp';
 
 class ExperienceComp extends Component {
     constructor(props){
@@ -51,6 +52,7 @@ class ExperienceComp extends Component {
     }
 
     render(){
+        console.log('F Name -->' + this.props.propObj1);
         return(
             <div className = "experience-section">
                 <p>Working Experience</p>
@@ -83,6 +85,8 @@ class ExperienceComp extends Component {
                     </div>
                 </form>
                 </div>
+
+                <EducationComp />
             </div>
         );
     }
