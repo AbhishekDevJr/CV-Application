@@ -26,7 +26,7 @@ class DisplayComp extends Component {
 
         return(
             <div className = "display-comp">
-                {/* {this.state.isClicked ? (console.log('Yes Clicked') : (console.log('Not Clicked')))} */}
+                {/*{this.state.isClicked ? (console.log('Yes Clicked') : (console.log('Not Clicked')))}*/}
                 {this.cvContent}
                 <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
             </div>
