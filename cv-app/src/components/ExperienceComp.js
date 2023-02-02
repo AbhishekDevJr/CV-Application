@@ -55,7 +55,7 @@ class ExperienceComp extends Component {
         console.log('Sec-1 state-->', this.props.propObj1);
         return(
             <div className = "experience-section">
-                <p>Working Experience</p>
+                <p className = "p-class">Working Experience</p>
 
                 <div className = "experience-form">
                 <form action = "" method = "">

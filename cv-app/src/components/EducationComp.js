@@ -58,7 +58,7 @@ class ExperienceComp extends Component {
         console.log('In Education Comp-->' , this.props.propObj1 , this.props.propObj2)
         return(
             <div className = "education-comp">
-                <p>Education</p>
+                <p className = "p-class">Education</p>
 
                 <div className = "education-form">
                     <form action = "" method = "">

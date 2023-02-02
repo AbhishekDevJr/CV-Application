@@ -50,7 +50,7 @@ form input, textarea {
 }
 
 
-.experience-section p {
+.experience-section:first-child, .p-class {
   font-family : 'Nunito', sans-serif;
   font-size : 24px;
   font-weight : 600;
@@ -80,4 +80,51 @@ form input, textarea {
   border : 1px solid blue;
   width : 50%;
   margin : 0 auto;
+}
+
+.resume-header-h1-inline {
+  display : inline;
+  font-size : 42px;
+  letter-spacing : 1px;
+}
+
+.resume-header {
+  padding : 2%;
+  background-color : rgb(20, 62, 114);
+  color : white;
+  font-family : Nunito, sans-serif;
+}
+
+.title-p {
+  font-size : 1.6rem;
+  margin : 0;
+  margin-top : 1%;
+}
+
+.description-personalDetails {
+  padding : 2%;
+  display : flex;
+  flex-direction : row;
+  justify-content : space-between;
+  align-items : center;
+}
+
+.description {
+  align-self : flex-start;
+}
+
+.margin-remove {
+  margin : 0;
+}
+
+.heading-blue {
+  color : rgb(20, 62, 114);
+  font-weight : 600;
+  font-size : 1.2rem;
+  margin : 0;
+  border-bottom : 1px solid rgb(204, 204, 204);
+}
+
+.margin-top-push {
+  margin-bottom : 1%;
 }

@@ -16,10 +16,26 @@ class DisplayComp extends Component {
             return(
             <div className = "conditional-render">
                 <div className = "resume-header">
-                    <p>{this.props.propObj1.fname}</p>
-                    <p>{this.props.propObj1.title}</p>
+                    <h1 className = "resume-header-h1-inline">{this.props.propObj1.fname} </h1>
+                    <h1 className = "resume-header-h1-inline">{this.props.propObj1.lname}</h1>
+                    <p className = "title-p">{this.props.propObj1.title}</p>
                 </div>
-            </div>)
+                <div className = "description-personalDetails">
+                    <div className = "description">
+                        <p className = "description-2nd heading-blue margin-top-push">Description</p>
+                        <p className = "description-2nd margin-remove">{this.props.propObj1.description}</p>
+                    </div>
+                    <div className = "personal-details">
+                        <p className = "heading-blue margin-top-push">Personal Details</p>
+                        <p className = "margin-remove">Address</p>
+                        <p className = "margin-remove">{this.props.propObj1.address}</p>
+                        <p className = "margin-remove">Phone Number</p>
+                        <p className = "margin-remove">{this.props.propObj1.number}</p>
+                        <p className = "margin-remove">Email</p>
+                        <p className = "margin-remove">{this.props.propObj1.email}</p>
+                    </div>
+                </div>
+            </div>);
         }
     }
 
