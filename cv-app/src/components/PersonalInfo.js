@@ -123,7 +123,7 @@ class PersonalInfo extends Component{
 
                 </div>
 
-                <ExperienceComp propObj1 = {this.state.fname} />
+                <ExperienceComp propObj1 = {this.state} />
             </div>
         )
     }

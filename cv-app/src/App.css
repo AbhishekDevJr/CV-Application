@@ -70,3 +70,14 @@ form input, textarea {
   justify-content : center;
   align-items : center;
 }
+
+.display-handler {
+  display : block;
+  margin : 0 auto;
+}
+
+.conditional-render {
+  border : 1px solid blue;
+  width : 50%;
+  margin : 0 auto;
+}

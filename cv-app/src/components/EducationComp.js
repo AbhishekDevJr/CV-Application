@@ -55,6 +55,7 @@ class ExperienceComp extends Component {
     }
 
     render(){
+        console.log('In Education Comp-->' , this.props.propObj1 , this.props.propObj2)
         return(
             <div className = "education-comp">
                 <p>Education</p>
@@ -95,7 +96,7 @@ class ExperienceComp extends Component {
                     </form>
                 </div>
                 <div className = "container-display">
-                    <DisplayComp />
+                    <DisplayComp propObj1 = {this.props.propObj1} propObj2 = {this.props.propObj2} propObj3 = {this.state} />
                 </div>
             </div>
         );

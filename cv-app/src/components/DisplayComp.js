@@ -10,6 +10,19 @@ class DisplayComp extends Component {
         }
     }
 
+    conditionalRender = () => {
+        if(this.state.isClicked){
+            console.log(this.props);
+            return(
+            <div className = "conditional-render">
+                <div className = "resume-header">
+                    <p>{this.props.propObj1.fname}</p>
+                    <p>{this.props.propObj1.title}</p>
+                </div>
+            </div>)
+        }
+    }
+
     handleBtnClick = (e) => {
         this.setState({
             isClicked : true
@@ -17,18 +30,11 @@ class DisplayComp extends Component {
     }
 
     render(){
-
-        if(this.state.isClicked){
-            let cvContent = <div className = "display-cv">Conditional Rendering Working</div>
-        }else{
-            let cvContent = <div className = ""></div>
-        }
-
+        console.log('display Component--> ' , this.props.propObj1, this.props.propObj2, this.props.propObj3);
         return(
             <div className = "display-comp">
-                {/*{this.state.isClicked ? (console.log('Yes Clicked') : (console.log('Not Clicked')))}*/}
-                {this.cvContent}
                 <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
+                {this.conditionalRender()}
             </div>
         );
     }
