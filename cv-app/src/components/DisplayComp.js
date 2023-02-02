@@ -27,12 +27,33 @@ class DisplayComp extends Component {
                     </div>
                     <div className = "personal-details">
                         <p className = "heading-blue margin-top-push">Personal Details</p>
-                        <p className = "margin-remove">Address</p>
+                        <p className = "margin-remove p-dark">Address:</p>
                         <p className = "margin-remove">{this.props.propObj1.address}</p>
-                        <p className = "margin-remove">Phone Number</p>
+                        <p className = "margin-remove p-dark">Phone Number:</p>
                         <p className = "margin-remove">{this.props.propObj1.number}</p>
-                        <p className = "margin-remove">Email</p>
+                        <p className = "margin-remove p-dark">Email:</p>
                         <p className = "margin-remove">{this.props.propObj1.email}</p>
+                    </div>
+                </div>
+                <div className = "experience-section-resume">
+                    <p className = "margin-remove heading-blue">Experience</p>
+                    <div className = "experience-contents">
+                        <p className = "margin-remove date-item p-dark">{this.props.propObj2.EndDate} - {this.props.propObj2.StartDate}</p>
+                        <div className = "flex-item-2">
+                            <p className = "margin-remove p-dark">{this.props.propObj2.position}</p>
+                            <p className = "margin-remove">{this.props.propObj2.company}, {this.props.propObj2.city}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className = "education-section-resume">
+                    <p className = "margin-remove heading-blue">Education</p>
+                    <div className = "education-contents">
+                        <p className = "date-item p-dark">{this.props.propObj3.EduStartDate} - {this.props.propObj3.EduEndDate}</p>
+                        <div className = "flex-item-2">
+                            <p className = "p-dark">{this.props.propObj3.UniName}, {this.props.propObj3.EduCity}</p>
+                            <p>Degree: {this.props.propObj3.Degree}</p>
+                            <p>Subject: {this.props.propObj3.subject}</p>
+                        </div>
                     </div>
                 </div>
             </div>);
@@ -46,7 +67,7 @@ class DisplayComp extends Component {
     }
 
     render(){
-        console.log('display Component--> ' , this.props.propObj1, this.props.propObj2, this.props.propObj3);
+        console.log('display Component--> ' , this.props.propObj1, 'propObj2--> ', this.props.propObj2, this.props.propObj3);
         return(
             <div className = "display-comp">
                 <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>

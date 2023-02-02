@@ -128,3 +128,36 @@ form input, textarea {
 .margin-top-push {
   margin-bottom : 1%;
 }
+
+.p-dark {
+  font-weight : 600;
+}
+
+.experience-section-resume{
+  padding : 2%;
+}
+
+.experience-contents {
+  max-width : 50%;
+  margin-top : 1%;
+  display : flex;
+  flex-direction : row;
+  justify-content : space-between;
+  align-items : center;
+}
+
+.date-item {
+  align-self : flex-start;
+}
+
+.education-section-resume {
+  padding : 2%;
+}
+
+.education-contents {
+  max-width : 60%;
+  display : flex;
+  flex-direction : row;
+  justify-content : space-between;
+  align-items : center;
+}
