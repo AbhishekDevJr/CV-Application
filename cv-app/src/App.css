@@ -72,14 +72,43 @@ form input, textarea {
 }
 
 .display-handler {
-  display : block;
-  margin : 0 auto;
+  cursor : pointer;
+  font-family : 'Nunito', sans-serif;
+  font-size : 1.2rem;
+  font-weight : 600;
+  margin : 0 1% 0 1%;
+  letter-spacing : 1px;
+  background-color : #3f51b5;
+  color : white;
+  border-radius : 20px;
+  padding : 1vh 1vw 1vh 1vw;
+  border : none;
+  transition : 0.2s
+}
+
+.button-container {
+  display : flex;
+  flex-direction : row;
+  justify-content : center;
+  align-items : center;
+  padding-top : 1%;
+  padding-bottom : 1%;
+}
+
+.display-handler:hover {
+  box-shadow : -1px 1px 5px 2px rgba(58, 58, 58, 0.81);
+  transition : 0.2s;
+}
+
+.display-handler:active{
+  box-shadow : -1px 1px 5px 2px rgba(58, 58, 58, 0.168);
 }
 
 .conditional-render {
-  border : 1px solid blue;
+  box-shadow : 1px 1px 6px 5px rgba(58, 58, 58, 0.158),
+               -1px -1px 6px 5px rgba(50, 50, 50, 0.151);
   width : 50%;
-  margin : 0 auto;
+  margin : 10px auto;
 }
 
 .resume-header-h1-inline {
@@ -155,7 +184,7 @@ form input, textarea {
 }
 
 .education-contents {
-  max-width : 60%;
+  max-width : 70%;
   display : flex;
   flex-direction : row;
   justify-content : space-between;

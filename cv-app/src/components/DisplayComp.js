@@ -51,8 +51,8 @@ class DisplayComp extends Component {
                         <p className = "date-item p-dark">{this.props.propObj3.EduStartDate} - {this.props.propObj3.EduEndDate}</p>
                         <div className = "flex-item-2">
                             <p className = "p-dark">{this.props.propObj3.UniName}, {this.props.propObj3.EduCity}</p>
-                            <p>Degree: {this.props.propObj3.Degree}</p>
-                            <p>Subject: {this.props.propObj3.subject}</p>
+                            <p><span className = "p-dark">Degree:</span> {this.props.propObj3.Degree}</p>
+                            <p><span className = "p-dark">Subject:</span> {this.props.propObj3.subject}</p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,10 @@ class DisplayComp extends Component {
         console.log('display Component--> ' , this.props.propObj1, 'propObj2--> ', this.props.propObj2, this.props.propObj3);
         return(
             <div className = "display-comp">
-                <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
+                <div className = "button-container">
+                    <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
+                    <button className = "display-handler" onClick = {this.handleBtnClick}>Edit CV</button>
+                </div>
                 {this.conditionalRender()}
             </div>
         );

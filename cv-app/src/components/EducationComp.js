@@ -24,20 +24,20 @@ class ExperienceComp extends Component {
     }
 
     handleEduCity = (e) => {
-        this.state({
+        this.setState({
             EduCity : e.target.value
         });
     }
 
     handleDegree = (e) => {
-        this.state({
+        this.setState({
             Degree : e.target.value
         });
     }
 
     handleSubject = (e) => {
         this.setState({
-            Subject : e.target.value
+            subject : e.target.value
         });
     }
 
