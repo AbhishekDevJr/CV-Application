@@ -14,7 +14,7 @@ class DisplayComp extends Component {
         if(this.state.isClicked){
             console.log(this.props);
             return(
-            <div className = "conditional-render">
+            <div className = "conditional-render" id = "resume-section">
                 <div className = "resume-header">
                     <h1 className = "resume-header-h1-inline">{this.props.propObj1.fname} </h1>
                     <h1 className = "resume-header-h1-inline">{this.props.propObj1.lname}</h1>
@@ -62,11 +62,79 @@ class DisplayComp extends Component {
     }
 
     handleBtnClick = (e) => {
-        this.props.handleInputEducation(true);
-        this.setState({
-            isClicked : true
-        });
-        e.preventDefault();
+
+        //Resume Form Validations
+        console.log('checking First character-----------------------> ', this.props.propObj1.fname[0]);
+        //First Name Validation
+        let validFormFlag = false;
+        if(this.props.propObj1.fname === '' || typeof(this.props.propObj1.fname === Number) || typeof(this.props.propObj1.fname[0] === Number) || this.props.propObj1.fname[0] === ' '){
+            const firstNameInput = document.getElementById('name');
+            firstNameInput.classList.add('errorClass');
+            validFormFlag = false;
+        }
+
+        else if(this.props.propObj1.lname === '' || typeof(this.props.propObj1.lname === Number) || typeof(this.props.propObj1.lname[0] === Number) || this.props.propObj1.lname[0] === ' '){
+            //Last Name Validation
+            const lastNameInput = document.getElementById('lName');
+            lastNameInput.classList.add('errorClass');
+            validFormFlag = false;
+        }
+
+        else if(isNaN(this.props.propObj1.number)){
+            console.log('-------------------->', parseInt(this.props.propObj1.number));
+            const numberInput = document.getElementById('number');
+            numberInput.classList.add('errorClass');
+            validFormFlag = false;
+        }
+
+        else if(!this.props.propObj1.email.includes('@')){
+            //Email Validation
+            const emailInput = document.getElementById('email');
+            emailInput.classList.add('errorClass');
+            validFormFlag = false;
+        }
+
+        else if(this.props.propObj2.StartDate > this.props.propObj2.EndDate){
+            //Date Validation Experience
+            const expStartDateInput = document.getElementById('sDate');
+            const expEndDateInput = document.getElementById('eDate');
+            expEndDateInput.classList.add('errorClass');
+            expStartDateInput.classList.add('errorClass');
+            validFormFlag = false;
+        }
+
+        else if(this.props.propObj3.EduStartDate > this.props.propObj3.EduEndDate){
+            //Date Validation Education
+            const eduStartDateInput = document.getElementById('eduStartDate');
+            const eduEndDateInput = document.getElementById('eduEndDate');
+            eduStartDateInput.classList.add('errorClass');
+            eduEndDateInput.classList.add('errorClass');
+            validFormFlag = false;
+        }
+
+        else{
+            validFormFlag = true;
+        }
+
+        if(validFormFlag){
+            //Removing Error Class so that red error border is removed upon Valid Resume Form
+            const allInputFields = document.querySelectorAll('input');
+            allInputFields.forEach((inputField) => {
+                inputField.classList.remove('errorClass');
+            });
+
+            this.props.handleInputEducation(validFormFlag);
+            this.setState({
+                isClicked : validFormFlag
+            });
+            e.preventDefault();
+            const resumeSection = document.getElementById('display-handler');
+            if (resumeSection) {
+                setTimeout(() => {resumeSection.scrollIntoView({ behavior: 'smooth' });}, 100);
+            }
+        }
+
+        
     }
 
     handleBtnEditClick = (e) => {
@@ -82,7 +150,7 @@ class DisplayComp extends Component {
         return(
             <div className = "display-comp">
                 <div className = "button-container">
-                    <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
+                    <button className = "display-handler" id = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
                     <button className = "display-handler" onClick = {this.handleBtnEditClick}>Edit CV</button>
                 </div>
                 {this.conditionalRender()}
