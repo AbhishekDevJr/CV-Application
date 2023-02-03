@@ -16,11 +16,13 @@ class ExperienceComp extends Component {
     }
 
     handlePosition = (e) => {
+        // this.props.handleInput(true);
         this.setState({
             position : e.target.value
         }, () => {
             console.log("New state in ASYNC callback:", this.state);
           });
+        //   e.preventDefault();
     }
 
     handleCompany = (e) => {
@@ -61,32 +63,32 @@ class ExperienceComp extends Component {
                 <form action = "" method = "">
                     <div className = "row">
                         <label htmlFor = "position">Position</label>
-                        <input type = "text" id = "position" name = "position" onChange = {this.handlePosition} />
+                        <input type = "text" id = "position" name = "position" disabled = {this.props.propObj1.disableInput} onChange = {this.handlePosition} />
                     </div>
 
                     <div className = "row">
                         <label htmlFor = "company">Company</label>
-                        <input type = "text" id = "company" name = "company" onChange = {this.handleCompany} />
+                        <input type = "text" id = "company" name = "company" disabled = {this.props.propObj1.disableInput} onChange = {this.handleCompany} />
                     </div>
 
                     <div className = "row">
                         <label htmlFor = "city">City</label>
-                        <input type = "text" id = "city" name = "city" onChange = {this.handleCity} />
+                        <input type = "text" id = "city" name = "city" disabled = {this.props.propObj1.disableInput} onChange = {this.handleCity} />
                     </div>
 
                     <div className = "row">
                         <label htmlFor = "sDate">Start Date</label>
-                        <input type = "date" id = "sDate" name = "sDate" onChange = {this.handleStartDate} />
+                        <input type = "date" id = "sDate" name = "sDate" disabled = {this.props.propObj1.disableInput} onChange = {this.handleStartDate} />
                     </div>
 
                     <div className = "row">
                         <label htmlFor = "eDate">End Date</label>
-                        <input type = "date" id = "eDate" name = "eDate" onChange = {this.handleEndDate} />
+                        <input type = "date" id = "eDate" name = "eDate" disabled = {this.props.propObj1.disableInput} onChange = {this.handleEndDate} />
                     </div>
                 </form>
                 </div>
 
-                <EducationComp propObj1 = {this.props.propObj1} propObj2 = {this.state} />
+                <EducationComp propObj1 = {this.props.propObj1} propObj2 = {this.state} handleInputExperience = {this.props.handleInputPersonal} />
             </div>
         );
     }

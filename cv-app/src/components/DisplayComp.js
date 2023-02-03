@@ -58,12 +58,15 @@ class DisplayComp extends Component {
                 </div>
             </div>);
         }
+        // e.preventDefault();
     }
 
     handleBtnClick = (e) => {
+        this.props.handleInputEducation(true);
         this.setState({
             isClicked : true
         });
+        e.preventDefault();
     }
 
     render(){

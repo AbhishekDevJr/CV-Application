@@ -13,9 +13,16 @@ class PersonalInfo extends Component{
             address : '',
             number : '',
             email : '',
-            description : ''
+            description : '',
+            disableInput : false
         };
 
+    }
+
+    handleDisableInput = (valueDisable) =>{
+        this.setState({
+            disableInput : valueDisable
+        });
     }
 
     handleFirstName = (e) => {
@@ -81,49 +88,49 @@ class PersonalInfo extends Component{
                     <form action = "" method = "">
                         <div className = "row">
                         <label htmlFor = "name">First Name</label>
-                        <input type = "text" id = "name" name = "name" value={this.state.fname} onChange={this.handleFirstName}/>
+                        <input type = "text" id = "name" name = "name" value={this.state.fname} disabled = {this.state.disableInput} onChange={this.handleFirstName}/>
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "lName">Last Name</label>
-                        <input type = "text" id = "lName" name = "lName" onChange = {this.handleLastName} />
+                        <input type = "text" id = "lName" name = "lName" disabled = {this.state.disableInput} onChange = {this.handleLastName} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "title">Title</label>
-                        <input type = "text" id = "title" name = "title" onChange = {this.handleTitle} />
+                        <input type = "text" id = "title" name = "title" disabled = {this.state.disableInput} onChange = {this.handleTitle} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "photo">Photo</label>
-                        <input type = "file" id = "photo" name = "photo" onChange = {this.handlePhoto} />
+                        <input type = "file" id = "photo" name = "photo" disabled = {this.state.disableInput} onChange = {this.handlePhoto} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "address">Address</label>
-                        <input type = "text" id = "address" name = "Address" onChange = {this.handleAddress}/>
+                        <input type = "text" id = "address" name = "Address" disabled = {this.state.disableInput} onChange = {this.handleAddress}/>
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "number">Phone Number</label>
-                        <input type = "text" id = "number" name = "Number" onChange = {this.handleNumber} />
+                        <input type = "text" id = "number" name = "Number" disabled = {this.state.disableInput} onChange = {this.handleNumber} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "email">Email</label>
-                        <input type = "email" id = "email" name = "Email" onChange = {this.handleEmail} />
+                        <input type = "email" id = "email" name = "Email" disabled = {this.state.disableInput} onChange = {this.handleEmail} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "description">Description</label>
-                        <textarea id = "description" name = "Description" rows = "5" onChange = {this.handleDescription} ></textarea>
+                        <textarea id = "description" name = "Description" rows = "5" disabled = {this.state.disableInput} onChange = {this.handleDescription} ></textarea>
                         </div>
 
                     </form>
 
                 </div>
 
-                <ExperienceComp propObj1 = {this.state} />
+                <ExperienceComp propObj1 = {this.state} handleInputPersonal = {this.handleDisableInput} />
             </div>
         )
     }
