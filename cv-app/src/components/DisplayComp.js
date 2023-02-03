@@ -69,13 +69,21 @@ class DisplayComp extends Component {
         e.preventDefault();
     }
 
+    handleBtnEditClick = (e) => {
+        this.props.handleInputEducation(false);
+        this.setState({
+            isClicked : false
+        });
+        e.preventDefault();
+    }
+
     render(){
         console.log('display Component--> ' , this.props.propObj1, 'propObj2--> ', this.props.propObj2, this.props.propObj3);
         return(
             <div className = "display-comp">
                 <div className = "button-container">
                     <button className = "display-handler" onClick = {this.handleBtnClick}>Create CV</button>
-                    <button className = "display-handler" onClick = {this.handleBtnClick}>Edit CV</button>
+                    <button className = "display-handler" onClick = {this.handleBtnEditClick}>Edit CV</button>
                 </div>
                 {this.conditionalRender()}
             </div>

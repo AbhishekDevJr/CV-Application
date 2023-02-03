@@ -24,7 +24,7 @@ class PersonalInfo extends Component{
             disableInput : valueDisable
         });
     }
-
+number
     handleFirstName = (e) => {
 
         this.setState({
@@ -93,12 +93,12 @@ class PersonalInfo extends Component{
 
                         <div className = "row">
                         <label htmlFor = "lName">Last Name</label>
-                        <input type = "text" id = "lName" name = "lName" disabled = {this.state.disableInput} onChange = {this.handleLastName} />
+                        <input type = "text" id = "lName" name = "lName" value = {this.state.lname} disabled = {this.state.disableInput} onChange = {this.handleLastName} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "title">Title</label>
-                        <input type = "text" id = "title" name = "title" disabled = {this.state.disableInput} onChange = {this.handleTitle} />
+                        <input type = "text" id = "title" name = "title" value = {this.state.title} disabled = {this.state.disableInput} onChange = {this.handleTitle} />
                         </div>
 
                         <div className = "row">
@@ -108,22 +108,22 @@ class PersonalInfo extends Component{
 
                         <div className = "row">
                         <label htmlFor = "address">Address</label>
-                        <input type = "text" id = "address" name = "Address" disabled = {this.state.disableInput} onChange = {this.handleAddress}/>
+                        <input type = "text" id = "address" name = "Address" value = {this.state.address}  disabled = {this.state.disableInput} onChange = {this.handleAddress}/>
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "number">Phone Number</label>
-                        <input type = "text" id = "number" name = "Number" disabled = {this.state.disableInput} onChange = {this.handleNumber} />
+                        <input type = "text" id = "number" name = "Number" value = {this.state.number} disabled = {this.state.disableInput} onChange = {this.handleNumber} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "email">Email</label>
-                        <input type = "email" id = "email" name = "Email" disabled = {this.state.disableInput} onChange = {this.handleEmail} />
+                        <input type = "email" id = "email" name = "Email" value = {this.state.email} disabled = {this.state.disableInput} onChange = {this.handleEmail} />
                         </div>
 
                         <div className = "row">
                         <label htmlFor = "description">Description</label>
-                        <textarea id = "description" name = "Description" rows = "5" disabled = {this.state.disableInput} onChange = {this.handleDescription} ></textarea>
+                        <textarea id = "description" name = "Description" rows = "5" value = {this.state.description} disabled = {this.state.disableInput} onChange = {this.handleDescription} ></textarea>
                         </div>
 
                     </form>
