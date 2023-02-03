@@ -15,14 +15,12 @@ class ExperienceComp extends Component {
         }
     }
 
+    //Functions to handle onChange events on input fields.
+
     handlePosition = (e) => {
-        // this.props.handleInput(true);
         this.setState({
             position : e.target.value
-        }, () => {
-            console.log("New state in ASYNC callback:", this.state);
-          });
-        //   e.preventDefault();
+        });
     }
 
     handleCompany = (e) => {
@@ -40,21 +38,16 @@ class ExperienceComp extends Component {
     handleStartDate = (e) => {
         this.setState({
             StartDate : e.target.value
-        }, () => {
-            console.log("New state in ASYNC callback:", this.state);
-          });
+        });
     }
 
     handleEndDate = (e) => {
         this.setState({
             EndDate : e.target.value
-        }, () => {
-            console.log("New state in ASYNC callback:", this.state);
-          });
+        });
     }
 
     render(){
-        console.log('Sec-1 state-->', this.props.propObj1);
         return(
             <div className = "experience-section">
                 <p className = "p-class">Working Experience</p>

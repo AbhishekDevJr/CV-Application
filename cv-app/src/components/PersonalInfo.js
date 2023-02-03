@@ -18,29 +18,25 @@ class PersonalInfo extends Component{
         };
 
     }
-
+    //Function to receive data from DisplayComp child component to disable input fields upon successful Resume Form Validation
     handleDisableInput = (valueDisable) =>{
         this.setState({
             disableInput : valueDisable
         });
     }
-number
+
+    //Functions to handle OnChange events on input fields
     handleFirstName = (e) => {
 
         this.setState({
             fname : e.target.value
-        },() => {
-            console.log("New state in ASYNC callback:", this.state.fname + ' ' + this.state.lname );
-          });
-        console.log('State Object--> ' , this.state);
+        });
     }
 
     handleLastName = (e) => {
         this.setState({
             lname : e.target.value
-        }, () => {
-            console.log("New state in ASYNC callback:", this.state.fname + ' ' + this.state.lname );
-          });
+        });
     }
 
     handleTitle = (e) => {
@@ -49,9 +45,9 @@ number
         });
     }
 
-    handlePhoto = (e) => {
-        console.log('Photo-->', e, ' Will implement handling pictures feature later');
-    }
+    // handlePhoto = (e) => {
+    //     // console.log('Photo-->', e, ' Will implement handling pictures feature later');
+    // }
 
     handleAddress = (e) => {
         this.setState({
@@ -103,7 +99,7 @@ number
 
                         <div className = "row">
                         <label htmlFor = "photo">Photo</label>
-                        <input type = "file" id = "photo" name = "photo" disabled = {this.state.disableInput} onChange = {this.handlePhoto} />
+                        <input type = "file" id = "photo" name = "photo" disabled = {this.state.disableInput} />
                         </div>
 
                         <div className = "row">

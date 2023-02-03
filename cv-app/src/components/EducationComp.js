@@ -16,13 +16,12 @@ class ExperienceComp extends Component {
         }
     }
 
+    //Functions to handle onChange events on input fields.
+
     handleUniName = (e) => {
-        // this.props.handleInputExperience(true);
         this.setState({
             UniName : e.target.value
-        },() => {console.log("New state in ASYNC callback:", this.state);
-            });
-        // e.preventDefault();
+        });
     }
 
     handleEduCity = (e) => {
@@ -52,12 +51,10 @@ class ExperienceComp extends Component {
     handleEduEndDate = (e) => {
         this.setState({
             EduEndDate : e.target.value
-        }, () => {console.log("New state in ASYNC callback:", this.state);
-    });
+        });
     }
 
     render(){
-        console.log('In Education Comp-->' , this.props.propObj1 , this.props.propObj2)
         return(
             <div className = "education-comp">
                 <p className = "p-class">Education</p>

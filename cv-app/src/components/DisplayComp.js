@@ -10,9 +10,9 @@ class DisplayComp extends Component {
         }
     }
 
+    //Function that returns JSX Elements that renders on condition that Form Validations are met.
     conditionalRender = () => {
         if(this.state.isClicked){
-            console.log(this.props);
             return(
             <div className = "conditional-render" id = "resume-section">
                 <div className = "resume-header">
@@ -58,43 +58,48 @@ class DisplayComp extends Component {
                 </div>
             </div>);
         }
-        // e.preventDefault();
     }
 
+    //Function that handles Create CV Button logic, Form Validations upon which Display section is rendered.
     handleBtnClick = (e) => {
 
-        //Resume Form Validations
-        console.log('checking First character-----------------------> ', this.props.propObj1.fname[0]);
+        //Removes the Error Red Border form all input fields and checks validations again, upon user Resubmission
+        const allInputFields = document.querySelectorAll('input');
+            allInputFields.forEach((inputField) => {
+                inputField.classList.remove('errorClass');
+            });
+
+        //Resume Form Validations, add error class red border if validations are unsuccessful.
         //First Name Validation
-        let validFormFlag = false;
-        if(this.props.propObj1.fname === '' || typeof(this.props.propObj1.fname === Number) || typeof(this.props.propObj1.fname[0] === Number) || this.props.propObj1.fname[0] === ' '){
+        let validFormFlag = true;
+        if(this.props.propObj1.fname === '' || !isNaN(parseInt(this.props.propObj1.fname)) || !isNaN(parseInt(this.props.propObj1.fname)) || this.props.propObj1.fname[0] === ' '){
             const firstNameInput = document.getElementById('name');
             firstNameInput.classList.add('errorClass');
             validFormFlag = false;
         }
 
-        else if(this.props.propObj1.lname === '' || typeof(this.props.propObj1.lname === Number) || typeof(this.props.propObj1.lname[0] === Number) || this.props.propObj1.lname[0] === ' '){
+        if(this.props.propObj1.lname === '' || !isNaN(parseInt(this.props.propObj1.lname)) || !isNaN(parseInt(this.props.propObj1.lname)) || this.props.propObj1.lname[0] === ' '){
             //Last Name Validation
             const lastNameInput = document.getElementById('lName');
             lastNameInput.classList.add('errorClass');
             validFormFlag = false;
         }
 
-        else if(isNaN(this.props.propObj1.number)){
-            console.log('-------------------->', parseInt(this.props.propObj1.number));
+        if(isNaN(this.props.propObj1.number)){
+            //Number Validation
             const numberInput = document.getElementById('number');
             numberInput.classList.add('errorClass');
             validFormFlag = false;
         }
 
-        else if(!this.props.propObj1.email.includes('@')){
+        if(!this.props.propObj1.email.includes('@')){
             //Email Validation
             const emailInput = document.getElementById('email');
             emailInput.classList.add('errorClass');
             validFormFlag = false;
         }
 
-        else if(this.props.propObj2.StartDate > this.props.propObj2.EndDate){
+        if(this.props.propObj2.StartDate > this.props.propObj2.EndDate){
             //Date Validation Experience
             const expStartDateInput = document.getElementById('sDate');
             const expEndDateInput = document.getElementById('eDate');
@@ -103,17 +108,13 @@ class DisplayComp extends Component {
             validFormFlag = false;
         }
 
-        else if(this.props.propObj3.EduStartDate > this.props.propObj3.EduEndDate){
+        if(this.props.propObj3.EduStartDate > this.props.propObj3.EduEndDate){
             //Date Validation Education
             const eduStartDateInput = document.getElementById('eduStartDate');
             const eduEndDateInput = document.getElementById('eduEndDate');
             eduStartDateInput.classList.add('errorClass');
             eduEndDateInput.classList.add('errorClass');
             validFormFlag = false;
-        }
-
-        else{
-            validFormFlag = true;
         }
 
         if(validFormFlag){
@@ -132,11 +133,14 @@ class DisplayComp extends Component {
             if (resumeSection) {
                 setTimeout(() => {resumeSection.scrollIntoView({ behavior: 'smooth' });}, 100);
             }
+        }else{
+            alert('Please provide valid data for the following input fields.\nFirst Name, Last Name and Email should not be empty.\nStart Dates should not be greater than End Dates.');
         }
 
         
     }
 
+    //Enables the input field by setting the disabled to false, removes Display Section.
     handleBtnEditClick = (e) => {
         this.props.handleInputEducation(false);
         this.setState({
@@ -146,7 +150,6 @@ class DisplayComp extends Component {
     }
 
     render(){
-        console.log('display Component--> ' , this.props.propObj1, 'propObj2--> ', this.props.propObj2, this.props.propObj3);
         return(
             <div className = "display-comp">
                 <div className = "button-container">
