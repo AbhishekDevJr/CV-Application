@@ -4,7 +4,6 @@ import {Component} from 'react';
 class DisplayComp extends Component {
     constructor(props){
         super(props);
-        //Temporary Setting true for development 
         this.state = {
             isClicked : false
         }
@@ -12,7 +11,7 @@ class DisplayComp extends Component {
 
     //Function that returns JSX Elements that renders on condition that Form Validations are met.
     conditionalRender = () => {
-        if(true){
+        if(this.state.isClicked){
             return(
             <div className = "conditional-render" id = "resume-section">
                 <div className = "resume-header">
