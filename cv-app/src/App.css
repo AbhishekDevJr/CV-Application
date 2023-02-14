@@ -140,6 +140,18 @@ form input, textarea {
   min-height : 100vh;
 }
 
+.emailP{
+  word-break: break-all;
+}
+
+@media(max-width : 812px){
+
+.conditional-render{
+  width : 100%;
+}
+
+}
+
 .resume-header-h1-inline {
   display : inline;
   font-size : 42px;
@@ -169,6 +181,14 @@ form input, textarea {
 
 .description {
   align-self : flex-start;
+  width : 50%;
+}
+
+.flex-item-2 {
+  width : 50%;
+}
+
+.personal-details {
   width : 50%;
 }
 

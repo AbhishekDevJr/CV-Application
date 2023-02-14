@@ -4,7 +4,7 @@ import {Component} from 'react';
 class DisplayComp extends Component {
     constructor(props){
         super(props);
-
+        //Temporary Setting true for development 
         this.state = {
             isClicked : false
         }
@@ -12,7 +12,7 @@ class DisplayComp extends Component {
 
     //Function that returns JSX Elements that renders on condition that Form Validations are met.
     conditionalRender = () => {
-        if(this.state.isClicked){
+        if(true){
             return(
             <div className = "conditional-render" id = "resume-section">
                 <div className = "resume-header">
@@ -32,7 +32,7 @@ class DisplayComp extends Component {
                         <p className = "margin-remove p-dark">Phone Number:</p>
                         <p className = "margin-remove">{this.props.propObj1.number}</p>
                         <p className = "margin-remove p-dark">Email:</p>
-                        <p className = "margin-remove">{this.props.propObj1.email}</p>
+                        <p className = "margin-remove emailP">{this.props.propObj1.email}</p>
                     </div>
                 </div>
                 <div className = "experience-section-resume">
