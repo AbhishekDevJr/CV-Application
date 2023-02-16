@@ -245,6 +245,36 @@ form input, textarea {
   border : 2px solid red;
 }
 
+.footer-section {
+  display : flex;
+  flex-direction : row;
+  justify-content : center;
+  align-items : center;
+  background-color : #383838;
+  color : white;
+  font-family : 'Nunito', sans-serif;
+}
+
+footer {
+  display : flex;
+  flex-direction : row;
+  justify-content : space-around;
+  align-items : center;
+  width : 500px;
+}
+
+footer img {
+  height : auto;
+  width : 40px;
+  transform : rotateZ(0deg);
+  transition : 0.3s;
+}
+
+footer img:hover {
+  transform : rotateZ(360deg);
+  transition : 0.3s;
+}
+
 @media(max-width : 600px){
   .personal-info {
     width : 100%;
