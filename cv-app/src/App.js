@@ -1,22 +1,17 @@
 import React from 'react';
-import {Component} from 'react';
-import PersonalInfo from './components/PersonalInfo';
+import {useState} from 'react';
+import {useEffect} from 'react';
 import './App.css';
+import PersonalInfo from './components/PersonalInfo';
 import Socials from './components/Socials';
 
-class App extends Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    return(
-      <div className = "app">
-        <PersonalInfo />
-        <Socials />
-      </div>
-    )
-  }
+function App(props){
+  return(
+    <div className = "app">
+      <PersonalInfo />
+      <Socials />
+    </div>
+  );
 }
 
 export default App;
